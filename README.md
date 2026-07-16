@@ -1,4 +1,4 @@
-# kol-x-verify — X KOL Sourcing 管线
+# kol-source — X KOL Sourcing 管线
 
 从画像定义到落地 Google Sheet 的完整 X（Twitter）KOL sourcing SOP + 可执行脚本。给用 Claude Code / Codex 的同事：clone 下来、填好 `.env`、在 repo 里开 agent 就能跑。
 
