@@ -2,3 +2,8 @@
 data/
 __pycache__/
 *.pyc
+
+# YouTube 线：中间产物不进 git，只保留示例输入
+!youtube/data/
+youtube/data/*
+!youtube/data/channels.example.csv

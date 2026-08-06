@@ -1,6 +1,6 @@
-# kol-source — X KOL Sourcing 管线
+# kol-source — KOL Sourcing 管线（X + YouTube）
 
-从画像定义到落地 Google Sheet 的完整 X（Twitter）KOL sourcing SOP + 可执行脚本。给用 Claude Code / Codex 的同事：clone 下来、填好 `.env`、在 repo 里开 agent 就能跑。
+从画像定义到落地 Google Sheet 的完整 KOL sourcing SOP + 可执行脚本。X（Twitter）线见下；**YouTube 线见 [youtube/PIPELINE_YT.md](youtube/PIPELINE_YT.md)**。给用 Claude Code / Codex 的同事：clone 下来、填好 `.env`、在 repo 里开 agent 就能跑。
 
 ## 这个 repo 里有什么
 
@@ -10,7 +10,11 @@
 | [SCHEMA.md](SCHEMA.md) | 表维度（10 基础列 + 备注格式约定）、10 类·3 方向分类体系、归类规则 |
 | [LESSONS.md](LESSONS.md) | 经验教训（画像列 40% 错误率事故、中文圈识别规则、成本与协作纪律） |
 | [AGENTS.md](AGENTS.md) / CLAUDE.md | agent 操作手册：判定标准、一票否决清单、改表纪律、产出格式 |
-| `scripts/` | Stage 3（画像验证）可执行脚本，其余阶段由 agent 按 PIPELINE.md 驱动工具完成 |
+| `scripts/` | X 线 Stage 3（画像验证）可执行脚本，其余阶段由 agent 按 PIPELINE.md 驱动工具完成 |
+| [youtube/PIPELINE_YT.md](youtube/PIPELINE_YT.md) | **YouTube 线完整管线**：6 步全脚本化，验证层 0 credits（yt-dlp + RSS），Deepline 只买判断，301 频道全量 ≈ $0.3 |
+| [youtube/RUBRIC.md](youtube/RUBRIC.md) | YouTube 判据（rubric v2，dev/builder 口径）+ 数值红线阈值表；这份文件同时是喂给模型的 prompt |
+| [youtube/DISCARD.md](youtube/DISCARD.md) | YouTube 弃选口径：每类为什么弃、反例、以及哪些东西不作为弃选依据 |
+| `youtube/scripts/` | 01 免费抓取 → 02 去重算指标 → 03 互动质检 → 04 定性判断 → 05 代码红线合判 → 06 建联优先级 |
 
 > 起因：2026-07 中文区 KOL 池复核发现批量建表的画像列错误率 ~40%——农场号被写成科研博主、负债学量化的奶爸被写成 LegalTech 分析师。**核心铁律：画像列必须逐人回读时间线验证。** 详见 LESSONS.md。
 
